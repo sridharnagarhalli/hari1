@@ -1,0 +1,56 @@
+<?php  session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GRIET-SIC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  function check(form){
+    var roll=form.roll.value;
+    var msg=form.message.value;
+    if(roll=="" || msg==""){
+    alert("fields marked (*) are mandetory");
+  }
+  else
+  {
+    window.location="suggess.php?i="+roll+"&j="+msg;
+  }
+  return false;
+  }
+  </script>
+</head>
+<body><div class="container">
+   <center> <img class="img-responsive" src="griet1.png" alt="Chania"></center> </div>  
+   <div class="container-fluid">
+  <div class="container-fluid">
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Student Profile</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li ><a href="index1.html"> Home</a></li>
+       <li><a href="#"> profile</a></li>
+       <li  class="active"><a href="#">Suggestions</a></li>
+    </ul>
+  </div>
+</nav>
+<form>
+<div class="form-group">
+  <div class="col-sm-3"></div><div class="col-sm-6">
+    <label for="roll">Roll.No*:</label>
+    <input type="text"  placeholder="RollNo" name="roll" id="roll" style="  width:100%;height:34px;padding:6px 12px;color:#555;border-radius:4px;">
+  </input><br><br></div><divclass="col-sm-3"></div></div>
+  <div clas="form-group">
+    <div class="col-sm-3"></div><div class="col-sm-6">
+  <label for="comment">Comments*:</label>
+  <textarea class="form-control" placeholder="comments" name="message" rows="10" id="comment"></textarea><br><div style="text-align:right;">
+  <button type="button" onclick="check(this.form);" class="btn btn-primary btn-md">Submit</button></div>
+</div><divclass="col-sm-3"></div></div>
+</div></form>
+</body>
+</html>
